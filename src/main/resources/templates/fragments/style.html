@@ -1,0 +1,64 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<!-- BEGIN CORE CSS -->
+<link rel="stylesheet" th:href="@{/static/assets/admin1/css/admin1.css}">
+<link rel="stylesheet" th:href="@{/static/assets/globals/css/elements.css}">
+<!-- END CORE CSS -->
+<!-- BEGIN PLUGINS CSS -->
+<link rel="stylesheet" th:href="@{/static/assets/globals/plugins/rickshaw/rickshaw.min.css}">
+<link rel="stylesheet" th:href="@{/static/assets/globals/plugins/bxslider/jquery.bxslider.css}">
+
+<link rel="stylesheet" th:href="@{/static/assets/globals/css/plugins.css}">
+<!-- END PLUGINS CSS -->
+<!-- BEGIN SHORTCUT AND TOUCH ICONS -->
+<link rel="shortcut icon" th:href="@{/static/assets/globals/img/icons/favicon.ico}">
+<link rel="apple-touch-icon" th:href="@{/static/assets/globals/img/icons/apple-touch-icon.png}">
+<!-- END SHORTCUT AND TOUCH ICONS -->
+<link rel="stylesheet" th:href="@{/static/assets/globals/plugins/minicolors/jquery.minicolors.css}">
+<link rel="stylesheet" th:href="@{/static/assets/globals/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css}">
+<link rel="stylesheet" th:href="@{/static/assets/globals/plugins/clockface/css/clockface.css}">
+<link rel="stylesheet" th:href="@{/static/assets/globals/plugins/eonasdan-bootstrap-datetimepicker/bootstrap-datetimepicker.min.css}">
+<link rel="stylesheet" th:href="@{/static/assets/globals/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css}">
+<style>
+	/* Start by setting display:none to make this hidden.
+	   Then we position it in relation to the viewport window
+	   with position:fixed. Width, height, top and left speak
+	   for themselves. Background we set to 80% white with
+	   our animation centered, and no-repeating */
+	.modal {
+	    display:    none;
+	    position:   fixed;
+	    z-index:    9999999;
+	    top:        0;
+	    left:       0;
+	    height:     100%;
+	    width:      100%;
+	    background: rgba( 255, 255, 255, .8 ) 
+	                url('http://i.stack.imgur.com/FhHRx.gif') 
+	                50% 50% 
+	                no-repeat;
+	}
+	
+	/* When the body has the loading class, we turn
+	   the scrollbar off with overflow:hidden */
+	body.loading {
+        overflow: hidden;
+    }
+	
+	/* Anytime the body has the loading class, our
+	   modal element will be visible */
+	body.loading .modal {
+	    display: block;
+	}
+
+    .menu-layer{
+        left: 0;
+    }
+    body{
+        margin-left: 0px;
+    }
+
+</style>
+
+<script th:src="@{/static/assets/globals/plugins/modernizr/modernizr.min.js}"></script>
+<link href='https://fonts.googleapis.com/css?family=Bayon|Francois+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Hanuman' rel='stylesheet' type='text/css'>

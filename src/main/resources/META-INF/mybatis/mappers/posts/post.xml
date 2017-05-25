@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kh.com.camface.repositories.PostRepository">
+
+    <resultMap id="findAllPopularPostResultMap" type="kh.com.camface.models.Post">
+        <result property="id" column="id"></result>
+        <result property="name" column="name"></result>
+        <result property="caption" column="caption"></result>
+        <result property="description" column="description"></result>
+        <result property="createdTime" column="created_time"></result>
+        <result property="fromName" column="from_name"></result>
+        <result property="fromId" column="from_id"></result>
+        <result property="icon" column="icon"></result>
+        <result property="picture" column="picture"></result>
+        <result property="shareCount" column="share_count"></result>
+        <result property="shareStoryCount" column="share_story_count"></result>
+        <result property="likeCount" column="like_count"></result>
+        <result property="commentCount" column="comment_count"></result>
+        <result property="updatedTime" column="updated_time"></result>
+        <result property="statusType" column="status_type"></result>
+        <result property="status" column="status"></result>
+        <result property="type" column="type"></result>
+        <result property="permalinkUrl" column="permalink_url"></result>
+        <result property="link" column="link"></result>
+        <result property="isPublished" column="is_published"></result>
+        <result property="isHidden" column="is_hidden"></result>
+        <result property="parentId" column="parent_id"></result>
+        <result property="story" column="story"></result>
+        <result property="message" column="message"></result>
+        <result property="title" column="post_title"></result>
+		<result property="shareStoryCount" column="share_story_count"></result>
+    </resultMap>
+    <select id="findAllPopularPost" resultMap="findAllPopularPostResultMap">
+        SELECT B.id,
+			B.name,
+			B.message,
+			B.story,
+		    B.caption,
+			A.description,
+			CASE WHEN A.created_time IS NULL THEN
+				B.created_time
+			ELSE
+				A.created_time
+			END AS created_time,
+			B.from_name,
+			B.from_id,
+			B.icon,
+			CASE WHEN B.picture IS NULL THEN
+			  '/static/assets/default-thumbnail.jpg'
+			ELSE
+			  B.picture
+			END AS picture,
+			B.share_count,
+			B.like_count,
+			B.comment_count,
+			B.updated_time,
+			B.status_type,
+			B.type,
+			B.permalink_url,
+			A.link,
+			B.is_published,
+			B.is_hidden,
+			B.parent_id,
+			B.title,
+			B.post_id,
+			A.share_story_count,
+			CASE WHEN A.name IS NULL THEN
+				B.message
+			ELSE
+				A.name
+		    END AS post_title
+        FROM posts A
+        INNER JOIN original_posts B ON A.id = B.post_id
+        ORDER BY B.share_count DESC
+    </select>
+
+	<insert id="save">
+		INSERT INTO posts(id, name, message, story, caption, description, created_time, from_name, from_id, icon, picture, share_count,share_story_count, like_count, comment_count, updated_time, status_type, type, permalink_url, link, is_published, is_hidden, parent_id)
+		VALUES (
+			#{id},
+			#{name},
+			#{message},
+			#{story},
+			#{caption},
+			#{description},
+			#{createdTime},
+			#{fromName},
+			#{fromId},
+			#{icon},
+			#{picture},
+			COALESCE(CAST(#{shareCount} AS NUMERIC), 0),
+			COALESCE(CAST(#{shareStoryCount} AS NUMERIC), 2),
+			COALESCE(CAST(#{likeCount} AS NUMERIC), 0),
+			COALESCE(CAST(#{commentCount} AS NUMERIC), 0),
+			#{updatedTime},
+			#{statusType},
+			#{type},
+			#{permalinkUrl},
+			#{link},
+			#{isPublished},
+			#{isHidden},
+			#{parentId}
+		)
+	</insert>
+
+	<insert id="saveOrignal">
+		INSERT INTO original_posts(id, name, message, story, caption, description, created_time, from_name, from_id, icon, picture, share_count, like_count, comment_count, updated_time, status_type, type, permalink_url, link, is_published, is_hidden, post_id)
+		VALUES (
+			#{id},
+			#{name},
+			#{message},
+			#{story},
+			#{caption},
+			#{description},
+			#{createdTime},
+			#{fromName},
+			#{fromId},
+			#{icon},
+			#{picture},
+			COALESCE(CAST(#{shareCount} AS NUMERIC), 0),
+			COALESCE(CAST(#{likeCount} AS NUMERIC), 0),
+			COALESCE(CAST(#{commentCount} AS NUMERIC), 0),
+			#{updatedTime},
+			#{statusType},
+			#{type},
+			#{permalinkUrl},
+			#{link},
+			#{isPublished},
+			#{isHidden},
+			#{parentId}
+		)
+	</insert>
+</mapper>

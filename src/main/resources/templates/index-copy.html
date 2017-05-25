@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      class="no-js"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout">
+<head>
+    <title>CAMBOPEN</title>
+    <style>
+        .card-body h4{
+            padding-top:10px;
+            font-weight: bold;
+        }
+        .card-body p{
+            text-align: justify;
+        }
+        body{
+            max-width: 1378px;
+            margin: 0 auto;
+        }
+        .menu-layer.active {
+            overflow-y: hidden;
+        }
+        .menu-layer{
+            margin-top: 113px;
+        }
+    </style>
+</head>
+<body>
+    <div layout:fragment="content">
+        <div class="nav-bar-container">
+            <!-- BEGIN ICONS -->
+            <div class="nav-menu">
+                <div class="hamburger">
+                    <span class="patty"></span>
+                    <span class="patty"></span>
+                    <span class="patty"></span>
+                    <span class="patty"></span>
+                    <span class="patty"></span>
+                    <span class="patty"></span>
+                </div><!--.hamburger-->
+            </div><!--.nav-menu-->
+
+            <div class="nav-bar-border"></div><!--.nav-bar-border-->
+
+            <!-- BEGIN OVERLAY HELPERS -->
+            <div class="overlay">
+                <div class="starting-point">
+                    <span></span>
+                </div><!--.starting-point-->
+                <div class="logo">CAMBOPEN</div><!--.logo-->
+            </div><!--.overlay-->
+
+            <!--<div class="overlay-secondary"></div>&lt;!&ndash;.overlay-secondary&ndash;&gt;-->
+            <!-- END OF OVERLAY HELPERS -->
+
+        </div><!--.nav-bar-container-->
+
+        <div class="content">
+            <div class="page-header full-content">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h1>CAMBOPEN</h1>
+                    </div><!--.col-->
+                </div><!--.row-->
+            </div><!--.page-header-->
+
+            <div class="display-animation">
+                <div class="row">
+                    <div class="col-md-2">
+                        <ul>
+                            <li class="has-child">
+                                <!--<a href="javascript:;">Popular Posts</a>-->
+                                <ul class="child-menu">
+                                    <li><a href="#">Today</a><span class="hover-bg"></span></li>
+                                    <li><a href="#">3 days ago</a><span class="hover-bg"></span></li>
+                                    <li><a href="#">7 days ago</a><span class="hover-bg"></span></li>
+                                </ul>
+                                <span class="hover-bg"></span>
+                            </li>
+                            <!--<li class="has-child open animate">-->
+                                <!--<a href="javascript:;">Popular Shares</a>-->
+                                <!--<ul class="child-menu">-->
+                                    <!--<li><a href="#"> >> Today</a><span class="hover-bg"></span></li>-->
+                                    <!--<li><a href="#"> >> 3 days ago</a><span class="hover-bg"></span></li>-->
+                                    <!--<li><a href="#"> >> 7 days ago</a><span class="hover-bg"></span></li>-->
+                                <!--</ul>-->
+                                <!--<span class="hover-bg"></span>
+                           </li>-->
+                        </ul>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card card-event">
+                                    <div class="card-heading bg-image sample-bg-image12">
+                                    </div><!--.card-heading-->
+                                    <div class="card-body">
+                                        <div class="calendar">
+                                            <div class="month">November</div>
+                                            <div class="date">27</div>
+                                        </div><!--.calendar-->
+                                        <h4>បទបុណ្យភូមិឆ្នាំ២០១៧ ចេញ MV ហើយ! តោះទៅទស្សនាទាំងអស់គ្នា!</h4>
+                                        <p>ថ្ងៃស្អែកដល់នបុណ្យភូមិហើយ! ហើយបទបុណ្យភូមិឆ្នាំ២០១៧ដែលមានចំណងជើងថា "បុណ្យភូមិកុកគ្រូ"ដោយ Smallworld Smallband និងក្មេងខ្មែរ ក៏បានចេញ Music Video ហើយ! មើលទៅបទភ្លេងទាក់ទាញនិងគួរអោយចង់រាំខ្លាំងណាស់ សង្ឃឹមថាអ្នកទាំងអស់គ្នានឹងចូលចិត្តនូវរសជាតិថ្មីមួយបែបទៀតរបស់បុណ្យភូមិឆ្នាំ២០១៧នេះ តោះកុំអោយខាតពេលយូទៅទស្សន...
+                                        </p>
+                                    </div><!--.card-body-->
+
+                                    <!--<div class="card-footer">-->
+                                        <!--<button type="button" class="btn btn-green btn-flat btn-ripple">100 Comment</button>-->
+                                        <!--<button type="button" class="btn btn-orange btn-flat btn-ripple">1000 Like</button>-->
+                                        <!--<button type="button" class="btn btn-red btn-flat btn-ripple">10000 Shares</button>-->
+                                    <!--</div>&lt;!&ndash;.card-footer&ndash;&gt;-->
+                                </div><!--.card-->
+                            </div><!--.col-md-6-->
+                            <div class="col-md-6">
+                                <div class="card card-event">
+                                    <div class="card-heading bg-image sample-bg-image14">
+                                    </div><!--.card-heading-->
+                                    <div class="card-body">
+                                        <div class="calendar">
+                                            <div class="month">December</div>
+                                            <div class="date">03</div>
+                                        </div><!--.calendar-->
+                                        <h4>ចង់បើកអាជីវកម្មជោគជ័យ ត្រូវបើកអាជីវកម្មណាដែលស៊ីមិនចេះអស់ម៉ូយ និងស៊ីមិនចេះទ្រលាន់ |</h4>
+                                        <p>លោកឧកញ៉ា វេជ្ជបណ្ឌិត គួច ម៉េងលី ស្ថាបនិក ប្រធាន​ក្រុម​ប្រឹក្សាភិបាល និងអគ្គនាយកប្រតិបត្តិនៃក្រុមហ៊ុន ម៉េងលី ជេ. គួច ​អេឌ្យូខេសិន ជាសហគ្រិនជោគជ័យម្នាក់នៅកម្ពុជា ដែលពលរដ្ឋកម្ពុជាបានស្គាល់ស្ទើរគ្រប់គ្នានោះ បច្ចុប្បន្នលោក​កំពុ​ង​ចែក​ចាយនៅនូវបទពិសោធន៍ និងចំណេះដែលលោកមានទៅក្មេងៗជំនាន់​ក្រោយតាមរយៈសិក្ខាសាលា...</p>
+                                    </div><!--.card-body-->
+
+                                    <!--<div class="card-footer">-->
+                                        <!--<button type="button" class="btn btn-green btn-flat btn-ripple">100 Comment</button>-->
+                                        <!--<button type="button" class="btn btn-orange btn-flat btn-ripple">1000 Like</button>-->
+                                        <!--<button type="button" class="btn btn-red btn-flat btn-ripple">10000 Shares</button>-->
+                                    <!--</div>&lt;!&ndash;.card-footer&ndash;&gt;-->
+                                </div><!--.card-->
+                            </div><!--.col-md-6-->
+                        </div>
+                    </div>
+                </div><!--.row-->
+            </div><!--.display-animation-->
+        </div><!--.content-->
+        <script id="POSTS_TEMPLATE" type="text/x-jquery-tmpl">
+            <div class="col-md-6">
+                <div class="card card-event">
+                    <div class="card-heading bg-image sample-bg-image14">
+                    </div><!--.card-heading-->
+                    <div class="card-body">
+                        <div class="calendar">
+                            <div class="month">December</div>
+                            <div class="date">03</div>
+                        </div><!--.calendar-->
+                        <h4>ចង់បើកអាជីវកម្មជោគជ័យ ត្រូវបើកអាជីវកម្មណាដែលស៊ីមិនចេះអស់ម៉ូយ និងស៊ីមិនចេះទ្រលាន់ |</h4>
+                        <p>លោកឧកញ៉ា វេជ្ជបណ្ឌិត គួច ម៉េងលី ស្ថាបនិក ប្រធាន​ក្រុម​ប្រឹក្សាភិបាល និងអគ្គនាយកប្រតិបត្តិនៃក្រុមហ៊ុន ម៉េងលី ជេ. គួច ​អេឌ្យូខេសិន ជាសហគ្រិនជោគជ័យម្នាក់នៅកម្ពុជា ដែលពលរដ្ឋកម្ពុជាបានស្គាល់ស្ទើរគ្រប់គ្នានោះ បច្ចុប្បន្នលោក​កំពុ​ង​ចែក​ចាយនៅនូវបទពិសោធន៍ និងចំណេះដែលលោកមានទៅក្មេងៗជំនាន់​ក្រោយតាមរយៈសិក្ខាសាលា...</p>
+                    </div><!--.card-body-->
+                </div><!--.card-->
+            </div><!--.col-md-6-->
+	    </script>
+    </div>
+    <th:block layout:fragment="javascript">
+        <script type="application/javascript">
+            $(function(){
+                var posts = {};
+                posts.findAllPopularPosts = function(){
+                    $.ajax({
+                        url: _ctx + "/V1/API/BACKOFFICE/TRANSACTION-REPORTS/DAILY-REPORTS",
+                        type: 'POST',
+                        dataType: 'JSON',
+                        data: JSON.stringify({
+                            "lotteryType": "1",
+                            "transactionDate": selectDate,
+                            "agencyIdx": $("#selectAgency").val(),
+                        }),
+                        success: function (response) {
+                            if (response.CODE == "0000") {
+                                $("#DAILY_REPORTS").html("");
+                                if (response.DATA.length > 0) {
+                                    $.each(response.DATA, function (key, value) {
+                                        response.DATA[key]["NO"] = (key + 1) + ((response.PAGINATION.PAGE - 1) * response.PAGINATION.LIMIT);
+                                        response.DATA[key]["BEGINNING_BALANCE"] = numeral(response.DATA[key]["BEGINNING_BALANCE"]).format("0,0") + " រៀល";
+                                        response.DATA[key]["ENDING_BALANCE"] = numeral(response.DATA[key]["ENDING_BALANCE"]).format("0,0") + " រៀល";
+                                    });
+                                    $("#DAILY_REPORT_TEMPLATE").tmpl(response.DATA).appendTo("tbody#DAILY_REPORTS");
+                                    $("#totalRecords").html(" " + response.PAGINATION.TOTAL_COUNT);
+                                    if (checkPagination) {
+                                        checkPagination = false;
+                                        dailyReports.setPagination(response.PAGINATION.TOTAL_PAGES);
+                                    }
+                                } else {
+                                    $("#DAILY_REPORTS").html("<tr style='text-align:center;'><td colspan='9'>គ្មានទិន្នន័យទេ</td></tr>");
+                                    $("#PAGINATION").html("");
+                                }
+                            }
+                        },
+                        error: function (data, status, err) {
+                            console.log("error: " + data + " status: " + status + " err:" + err);
+                        }
+                    }).complete(function () {
+
+                    });
+                };
+            });
+        </script>
+    </th:block>
+</body>
+</html>

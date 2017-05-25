@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      class="no-js"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout">
+<head>
+    <title>CAMBOPEN</title>
+    <style>
+        .card-body h4{
+            padding-top:10px;
+            font-weight: bold;
+        }
+        .card-body p{
+            text-align: justify;
+        }
+        body{
+            max-width: 1378px;
+            margin: 0 auto;
+        }
+        .menu-layer.active {
+            overflow-y: hidden;
+        }
+        .menu-layer{
+            margin-top: 113px;
+        }
+        .post{
+            cursor: pointer;
+            cursor: hand;
+        }
+    </style>
+</head>
+<body>
+    <div layout:fragment="content">
+        <div class="nav-bar-container">
+            <!-- BEGIN ICONS -->
+            <div class="nav-menu">
+                <div class="hamburger">
+                    <span class="patty"></span>
+                    <span class="patty"></span>
+                    <span class="patty"></span>
+                    <span class="patty"></span>
+                    <span class="patty"></span>
+                    <span class="patty"></span>
+                </div><!--.hamburger-->
+            </div><!--.nav-menu-->
+
+            <div class="nav-bar-border"></div><!--.nav-bar-border-->
+
+            <!-- BEGIN OVERLAY HELPERS -->
+            <div class="overlay">
+                <div class="starting-point">
+                    <span></span>
+                </div><!--.starting-point-->
+                <div class="logo">CAMBOPEN</div><!--.logo-->
+            </div><!--.overlay-->
+
+            <!--<div class="overlay-secondary"></div>&lt;!&ndash;.overlay-secondary&ndash;&gt;-->
+            <!-- END OF OVERLAY HELPERS -->
+
+        </div><!--.nav-bar-container-->
+
+        <div class="content">
+            <div class="page-header full-content">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h1>CAMBOPEN</h1>
+                    </div><!--.col-->
+                </div><!--.row-->
+            </div><!--.page-header-->
+
+            <div class="display-animation">
+                <div class="row">
+                    <div class="col-md-2">
+                        <ul>
+                            <li class="has-child">
+                                <!--<a href="javascript:;">Popular Posts</a>-->
+                                <ul class="child-menu">
+                                    <li><a href="#">Today</a><span class="hover-bg"></span></li>
+                                    <li><a href="#">3 days ago</a><span class="hover-bg"></span></li>
+                                    <li><a href="#">7 days ago</a><span class="hover-bg"></span></li>
+                                </ul>
+                                <span class="hover-bg"></span>
+                            </li>
+                            <!--<li class="has-child open animate">-->
+                                <!--<a href="javascript:;">Popular Shares</a>-->
+                                <!--<ul class="child-menu">-->
+                                    <!--<li><a href="#"> >> Today</a><span class="hover-bg"></span></li>-->
+                                    <!--<li><a href="#"> >> 3 days ago</a><span class="hover-bg"></span></li>-->
+                                    <!--<li><a href="#"> >> 7 days ago</a><span class="hover-bg"></span></li>-->
+                                <!--</ul>-->
+                                <!--<span class="hover-bg"></span>
+                           </li>-->
+                        </ul>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="row" id="POSTS">
+
+                        </div>
+                    </div>
+                </div><!--.row-->
+            </div><!--.display-animation-->
+        </div><!--.content-->
+        <!--<div class="card-heading bg-image sample-bg-image14">-->
+        <!--</div>&lt;!&ndash;.card-heading&ndash;&gt;-->
+        <script id="POSTS_TEMPLATE" type="text/x-jquery-tmpl">
+            <div class="col-md-12 post" data-link="{{= link}}">
+                <div class="card card-event">
+                    <!--<div>-->
+                        <!--<img src="{{= picture}}" style="width: 130px;height: 130px;"/>-->
+                    <!--</div>-->
+                    <!--<div class="card-body">-->
+                        <!--<div class="calendar">-->
+                            <!--<div class="month">{{= month}}</div>-->
+                            <!--<div class="date">{{= day}}</div>-->
+                        <!--</div>&lt;!&ndash;.calendar&ndash;&gt;-->
+                        <!--<h4>{{= title}}</h4>-->
+                        <!--<p>{{= description}}</p>-->
+                        <!--<p>Create Time: {{= createdTime}}</p>-->
+                    <!--</div>&lt;!&ndash;.card-body&ndash;&gt;-->
+                </div><!--.card-->
+            </div><!--.col-md-6-->
+	    </script>
+    </div>
+
+    <th:block layout:fragment="javascript">
+        <script th:src="@{/static/js/index.js}"></script>
+    </th:block>
+</body>
+</html>

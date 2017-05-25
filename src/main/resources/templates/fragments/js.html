@@ -1,0 +1,42 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<!-- BEGIN GLOBAL AND THEME VENDORS -->
+<script th:src="@{/static/assets/globals/js/global-vendors.js}"></script>
+<!-- END GLOBAL AND THEME VENDORS -->
+<!-- PLEASURE -->
+<script th:src="@{/static/assets/globals/js/pleasure.js}"></script>
+<!-- ADMIN 1 -->
+<script th:src="@{/static/assets/admin1/js/layout.js}"></script>
+
+<script th:src="@{/static/javascripts/libraries/jquery.tmpl.min.js}"></script>
+<script th:src="@{/static/javascripts/libraries/jquery.bootpag.min.js}"></script>
+<script th:src="@{/static/javascripts/libraries/jquery.bpopup.min.js}"></script>
+
+<!-- BEGIN INITIALIZATION-->
+<script>
+    $(document).ready(function () {
+        Pleasure.init();
+        Layout.init();
+
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            $(".menu-layer").removeClass("activating");
+            $(".menu-layer").removeClass("active");
+            $(".nav-bar-container").show();
+        }
+
+        $(window).resize(function() {
+            console.log( "Handler for .resize() called", $(window).width());
+            MenuLayerDisplay();
+        });
+
+        MenuLayerDisplay = function(){
+            if($(window).width()> 767){
+                $(".nav-bar-container").hide();
+            }else{
+                $(".nav-bar-container").show();
+            }
+        }
+
+        MenuLayerDisplay();
+    });
+</script>
+<!-- END INITIALIZATION-->

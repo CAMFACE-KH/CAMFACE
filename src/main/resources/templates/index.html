@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      class="no-js"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout">
+<head>
+    <title>CAMBOPEN</title>
+    <style>
+        .card-body h4{
+            padding-top:10px;
+            font-weight: bold;
+        }
+        .card-body p{
+            text-align: justify;
+        }
+        body{
+            max-width: 1378px;
+            margin: 0 auto;
+        }
+        .menu-layer.active {
+            overflow-y: hidden;
+        }
+        .menu-layer{
+            margin-top: 113px;
+        }
+        .post{
+            cursor: pointer;
+            cursor: hand;
+        }
+        #wrapper
+        {
+            height:100%;
+        }
+        .containerIframe
+        {
+            height: 100%;
+            position: relative
+        }
+    </style>
+</head>
+<body>
+    <div layout:fragment="content">
+        <div class="nav-bar-container">
+            <!-- BEGIN ICONS -->
+            <div class="nav-menu">
+                <div class="hamburger">
+                    <span class="patty"></span>
+                    <span class="patty"></span>
+                    <span class="patty"></span>
+                    <span class="patty"></span>
+                    <span class="patty"></span>
+                    <span class="patty"></span>
+                </div><!--.hamburger-->
+            </div><!--.nav-menu-->
+
+            <div class="nav-bar-border"></div><!--.nav-bar-border-->
+
+            <!-- BEGIN OVERLAY HELPERS -->
+            <div class="overlay">
+                <div class="starting-point">
+                    <span></span>
+                </div><!--.starting-point-->
+                <div class="logo">CAMBOPEN</div><!--.logo-->
+            </div><!--.overlay-->
+
+            <!--<div class="overlay-secondary"></div>&lt;!&ndash;.overlay-secondary&ndash;&gt;-->
+            <!-- END OF OVERLAY HELPERS -->
+
+        </div><!--.nav-bar-container-->
+
+        <div class="content">
+            <div class="page-header full-content">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h1>CAMBOPEN</h1>
+                    </div><!--.col-->
+                </div><!--.row-->
+            </div><!--.page-header-->
+
+            <div class="display-animation" id="wrapper">
+                <div class="row">
+                    <div class="col-md-2">
+                        <ul>
+                            <li class="has-child">
+                                <!--<a href="javascript:;">Popular Posts</a>-->
+                                <ul class="child-menu">
+                                    <li><a href="#">Today</a><span class="hover-bg"></span></li>
+                                    <li><a href="#">3 days ago</a><span class="hover-bg"></span></li>
+                                    <li><a href="#">7 days ago</a><span class="hover-bg"></span></li>
+                                </ul>
+                                <span class="hover-bg"></span>
+                            </li>
+                            <!--<li class="has-child open animate">-->
+                                <!--<a href="javascript:;">Popular Shares</a>-->
+                                <!--<ul class="child-menu">-->
+                                    <!--<li><a href="#"> >> Today</a><span class="hover-bg"></span></li>-->
+                                    <!--<li><a href="#"> >> 3 days ago</a><span class="hover-bg"></span></li>-->
+                                    <!--<li><a href="#"> >> 7 days ago</a><span class="hover-bg"></span></li>-->
+                                <!--</ul>-->
+                                <!--<span class="hover-bg"></span>
+                           </li>-->
+                        </ul>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="row" id="POSTS">
+
+                        </div>
+                    </div>
+                </div><!--.row-->
+            </div><!--.display-animation-->
+        </div><!--.content-->
+        <!--<div class="card-heading bg-image sample-bg-image14">-->
+        <!--</div>&lt;!&ndash;.card-heading&ndash;&gt;-->
+        <script id="POSTS_TEMPLATE" type="text/x-jquery-tmpl">
+            <div class="col-md-12 post" data-link="{{= link}}">
+                {{if type == "video"}}
+                    <iframe src="https://www.facebook.com/plugins/video.php?href={{= link}}&show_text=1&show_text=1&width=560" width="560" height="699" style="border:none;overflow:hidden" scrolling="no" frameborder="1" allowTransparency="true"></iframe>
+				{{else}}
+				    <iframe src="https://www.facebook.com/plugins/post.php?href={{= link}}&show_text=1&show_text=1&width=560" width="560" height="699" style="border:none;overflow:hidden" scrolling="no" frameborder="1" allowTransparency="true"></iframe>
+				{{/if}}
+            </div><!--.col-md-6-->
+	    </script>
+    </div>
+    <th:block layout:fragment="javascript">
+        <script th:src="@{/static/js/index.js}"></script>
+        <script type="application/javascript">
+
+            function resizeIFrameToFitContent( iFrame ) {
+
+                iFrame.width  = iFrame.contentWindow.document.body.scrollWidth;
+                iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
+            }
+
+            window.addEventListener('DOMContentReady', function(e) {
+
+                // or, to resize all iframes:
+                var iframes = document.querySelectorAll("iframe");
+                for( var i = 0; i < iframes.length; i++) {
+                    resizeIFrameToFitContent( iframes[i] );
+                }
+            } );
+
+        </script>
+    </th:block>
+</body>
+</html>
